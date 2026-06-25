@@ -127,28 +127,33 @@ Customer Segment Label
 
 # 📈 System Modules
 
-# 👥 1. Customer Module
+ 👥 1. Customer Module
+```text
 View all customers
 Gender & spending analysis
 Search customers
-
-# 📊 2. Segmentation Module
+```
+ 📊 2. Segmentation Module
+```text
 Cluster visualization
 Segment-wise breakdown
 
-# 🎯 3. Recommendation Module
+🎯 3. Recommendation Module
+```text
 Product recommendation based on segment
 Category-based mapping
-
-# 📈 4. Analytics Module
+```
+ 📈 4. Analytics Module
+```text
 Spending distribution graph
 Segment distribution graph
-
-# 📑 5. Reports Module
+```
+ 📑 5. Reports Module
+```text
 Total customers/products
 Top segment analysis
 AI insights summary
-
+```
 # ⚙ Installation
 
 # Clone Repository
