@@ -137,7 +137,7 @@ Search customers
 ```text
 Cluster visualization
 Segment-wise breakdown
-
+```
 🎯 3. Recommendation Module
 ```text
 Product recommendation based on segment
