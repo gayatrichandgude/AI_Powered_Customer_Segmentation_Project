@@ -1,8 +1,8 @@
-🧠 AI Customer Segmentation & Recommendation System
+# 🧠 AI Customer Segmentation & Recommendation System
 
 A Machine Learning based Customer Segmentation System that groups customers into meaningful clusters using K-Means Clustering and provides AI-based product recommendations through a Flask web application.
 
-📌 Project Overview
+# 📌 Project Overview
 
 This project uses Machine Learning (K-Means Algorithm) to analyze customer behavior based on:
 
@@ -12,7 +12,7 @@ Spending Score
 
 The system segments customers into different groups and provides personalized product recommendations, along with an interactive Flask dashboard for visualization and insights.
 
-🎯 Objectives
+# 🎯 Objectives
 
 Build a Machine Learning model for customer segmentation
 Group customers into meaningful clusters using K-Means
@@ -22,7 +22,7 @@ Develop a Flask-based web application
 Enable dataset upload and dynamic analysis
 Generate business insights for decision making
 
-🚀 Features
+# 🚀 Features
 
 👥 Customer Management Dashboard
 📊 AI Customer Segmentation (K-Means Clustering)
@@ -34,7 +34,7 @@ Generate business insights for decision making
 📊 Segment-wise Visualization
 🧠 AI-based Rule Engine for Recommendations
 
-🛠 Technologies Used
+# 🛠 Technologies Used
 
 Python
 Flask
@@ -48,7 +48,7 @@ HTML5
 CSS3
 Bootstrap 5
 
-📂 Project Structure
+# 📂 Project Structure
 
 ```text
 AI_Powered_Customer_Segmentation_Project/
@@ -81,11 +81,11 @@ AI_Powered_Customer_Segmentation_Project/
 │
 └── README.md
 ```
-📊 Dataset Description
+# 📊 Dataset Description
 
 The dataset contains customer behavior data.
 
-Customer Dataset:
+# Customer Dataset:
 CustomerID
 CustomerName
 Gender
@@ -94,83 +94,85 @@ AnnualIncome
 SpendingScore
 Segment 
 
-Product Dataset:
+# Product Dataset:
 ProductID
 ProductName
 Category
 Price
 
-🔄 Data Preprocessing
+# 🔄 Data Preprocessing
 Handling missing values
 Feature selection
 Standardization using StandardScaler
 Data normalization
 Label assignment using K-Means
 
-🧠 Machine Learning Model
-Algorithm Used:
+# 🧠 Machine Learning Model
+# Algorithm Used:
 👉 K-Means Clustering
 
-Features Used:
+# Features Used:
 Age
 Annual Income
 Spending Score
 
-Number of Clusters:
+# Number of Clusters:
 👉 4 Customer Segments (0, 1, 2, 3)
 
-Output:
+# Output:
 Customer Segment Label
-📈 System Modules
 
-👥 1. Customer Module
+# 📈 System Modules
+
+# 👥 1. Customer Module
 View all customers
 Gender & spending analysis
 Search customers
 
-📊 2. Segmentation Module
+# 📊 2. Segmentation Module
 Cluster visualization
 Segment-wise breakdown
 
-🎯 3. Recommendation Module
+# 🎯 3. Recommendation Module
 Product recommendation based on segment
 Category-based mapping
 
-📈 4. Analytics Module
+# 📈 4. Analytics Module
 Spending distribution graph
 Segment distribution graph
 
-📑 5. Reports Module
+# 📑 5. Reports Module
 Total customers/products
 Top segment analysis
 AI insights summary
 
-⚙ Installation
+# ⚙ Installation
 
-Clone Repository
+# Clone Repository
 git clone https://github.com/gayatrichandgude/AI_Powered_Customer_Segmentation_Project.git
 
 cd AI_Powered_Customer_Segmentation_Project
 
-Create Virtual Environment
+# Create Virtual Environment
 python -m venv venv
-Activate Environment
+
+# Activate Environment
 venv\Scripts\activate
 
-Install Dependencies
+# Install Dependencies
 pip install -r requirements.txt
 
-▶ Run Project
+# Run Project
 Train Model
 python train_model.py
 
-Run Flask App
+# Run Flask App
 python app.py
 
-Open Browser
+# Open Browser
 http://127.0.0.1:5000
 
-📊 Key Insights
+# 📊 Key Insights
 
 Customers are divided into 4 behavior-based clusters
 High-income users receive premium recommendations
@@ -178,7 +180,7 @@ Low-income users receive budget-friendly suggestions
 Helps businesses improve targeted marketing
 Improves customer understanding using AI
 
-🔮 Future Improvements
+# 🔮 Future Improvements
 
 AI-based recommendation engine (collaborative filtering)
 Real-time model training
@@ -187,13 +189,13 @@ Cloud database integration
 Deployment on AWS / Render / Azure
 Mobile application version
 
-👩‍💻 Author
+# 👩‍💻 Author
 
 Gayatri Chandgude
 
 GitHub:
 https://github.com/gayatrichandgude
 
-📜 License
+# 📜 License
 
 This project is for educational purposes only.
