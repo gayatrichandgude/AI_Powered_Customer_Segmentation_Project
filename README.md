@@ -13,6 +13,7 @@ Spending Score
 The system segments customers into different groups and provides personalized product recommendations, along with an interactive Flask dashboard for visualization and insights.
 
 🎯 Objectives
+
 Build a Machine Learning model for customer segmentation
 Group customers into meaningful clusters using K-Means
 Provide AI-based product recommendations
@@ -22,6 +23,7 @@ Enable dataset upload and dynamic analysis
 Generate business insights for decision making
 
 🚀 Features
+
 👥 Customer Management Dashboard
 📊 AI Customer Segmentation (K-Means Clustering)
 🎯 Personalized Product Recommendations
@@ -33,6 +35,7 @@ Generate business insights for decision making
 🧠 AI-based Rule Engine for Recommendations
 
 🛠 Technologies Used
+
 Python
 Flask
 Pandas
@@ -46,6 +49,8 @@ CSS3
 Bootstrap 5
 
 📂 Project Structure
+
+```text
 AI_Powered_Customer_Segmentation_Project/
 
 ├── app.py
@@ -75,7 +80,7 @@ AI_Powered_Customer_Segmentation_Project/
 │   ├── reports.html
 │
 └── README.md
-
+```
 📊 Dataset Description
 
 The dataset contains customer behavior data.
@@ -104,39 +109,44 @@ Label assignment using K-Means
 
 🧠 Machine Learning Model
 Algorithm Used:
-
 👉 K-Means Clustering
 
 Features Used:
 Age
 Annual Income
 Spending Score
-Number of Clusters:
 
+Number of Clusters:
 👉 4 Customer Segments (0, 1, 2, 3)
 
 Output:
 Customer Segment Label
 📈 System Modules
+
 👥 1. Customer Module
 View all customers
 Gender & spending analysis
 Search customers
+
 📊 2. Segmentation Module
 Cluster visualization
 Segment-wise breakdown
+
 🎯 3. Recommendation Module
 Product recommendation based on segment
 Category-based mapping
+
 📈 4. Analytics Module
 Spending distribution graph
 Segment distribution graph
+
 📑 5. Reports Module
 Total customers/products
 Top segment analysis
 AI insights summary
 
 ⚙ Installation
+
 Clone Repository
 git clone https://github.com/gayatrichandgude/AI_Powered_Customer_Segmentation_Project.git
 
@@ -161,6 +171,7 @@ Open Browser
 http://127.0.0.1:5000
 
 📊 Key Insights
+
 Customers are divided into 4 behavior-based clusters
 High-income users receive premium recommendations
 Low-income users receive budget-friendly suggestions
@@ -168,6 +179,7 @@ Helps businesses improve targeted marketing
 Improves customer understanding using AI
 
 🔮 Future Improvements
+
 AI-based recommendation engine (collaborative filtering)
 Real-time model training
 User login & authentication system
