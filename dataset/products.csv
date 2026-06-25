@@ -1,0 +1,21 @@
+ProductID,ProductName,Category,Price
+101,Laptop,Electronics,50000
+102,Smartphone,Electronics,25000
+103,Headphones,Electronics,3000
+104,Smartwatch,Electronics,6000
+105,Tablet,Electronics,20000
+106,Shoes,Fashion,3500
+107,TShirt,Fashion,1200
+108,Jeans,Fashion,2200
+109,Handbag,Fashion,2800
+110,Sunglasses,Fashion,1800
+111,Novel,Books,500
+112,Notebook,Books,250
+113,Gym Kit,Sports,4000
+114,Football,Sports,1200
+115,Cricket Bat,Sports,2500
+116,Mixer,Home Appliances,4500
+117,Microwave,Home Appliances,12000
+118,Coffee Maker,Home Appliances,3500
+119,Face Wash,Beauty,300
+120,Perfume,Beauty,1500

@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    background: #f4f7ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    min-height: 100vh;
+    background: linear-gradient( 180deg, #4f46e5, #3730a3);
+    padding: 30px 20px;
+    position: fixed;
+}
+
+.sidebar h3 {
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 12px;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, .20);
+    transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+    background: white;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+.main-content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 30px;
+}
+
+.page-header {
+    background: linear-gradient( 135deg, #4f46e5, #06b6d4);
+    color: white;
+    padding: 40px;
+    border-radius: 25px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.stat-card i {
+    font-size: 35px;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.stat-card h2 {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.chart-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+}
+
+.chart-card h4 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}

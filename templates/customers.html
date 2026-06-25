@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Customers | Segment AI</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/customers.css') }}">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h3>🧠 Segment AI</h3>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/customers" class="active">
+                    <i class="fas fa-users"></i>
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="page-header">
+
+            <h1>
+                <i class="fas fa-users"></i>
+                Customer Management
+            </h1>
+
+            <p>
+                View and analyze customer information
+            </p>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h2>{{ total_customers }}</h2>
+                    <p>Total Customers</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <i class="fas fa-mars"></i>
+                    <h2>{{ male_count }}</h2>
+                    <p>Male Customers</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <i class="fas fa-venus"></i>
+                    <h2>{{ female_count }}</h2>
+                    <p>Female Customers</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="stat-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>{{ avg_spending }}</h2>
+                    <p>Avg Spending</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SEARCH -->
+
+        <div class="search-box mb-4">
+
+            <input
+                type="text"
+                id="searchInput"
+                class="form-control"
+                placeholder="Search customer..."
+            >
+
+        </div>
+
+        <!-- TABLE -->
+
+        <div class="table-card">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                        <tr>
+                            <th>CustomerID</th>
+                            <th>CustomerName</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>Income</th>
+                            <th>Spending Score</th>
+                            <th>Segment</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="customerTable">
+
+                        {% for row in customers %}
+
+                        <tr>
+
+                            <td>{{ row.CustomerID }}</td>
+                            <td>{{ row.CustomerName }}</td>
+                            <td>{{ row.Gender }}</td>
+                            <td>{{ row.Age }}</td>
+                            <td>₹ {{ row.AnnualIncome }}</td>
+                            <td>{{ row.SpendingScore }}</td>
+                            <td>{{ row.Segment }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+    const searchInput = document.getElementById("searchInput");
+
+    searchInput.addEventListener("keyup", function(){
+
+        let filter = this.value.toLowerCase();
+
+        let rows = document.querySelectorAll("#customerTable tr");
+
+        rows.forEach(function(row){
+
+            let text = row.innerText.toLowerCase();
+
+            if(text.includes(filter)){
+                row.style.display = "";
+            }
+            else{
+                row.style.display = "none";
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

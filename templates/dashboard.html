@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard | Segment AI</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/dashboard.css') }}">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar">
+
+        <div class="sidebar-logo">
+            <i class="fas fa-brain"></i>
+            <span>Segment AI</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+      <li>
+<a href="/customers">
+<i class="fas fa-users"></i>
+Customers
+</a>
+</li>
+            <li>
+                <a href="/segments">
+    <i class="fas fa-layer-group"></i>
+    Segments
+</a>
+            </li>
+
+            <li>
+                <a href="/recommendations">
+                    <i class="fas fa-lightbulb"></i>
+                    Recommendations
+                </a>
+            </li>
+
+            <li>
+                <a href="/analytics">
+                    <i class="fas fa-chart-line"></i>
+                    Analytics
+                </a>
+            </li>
+
+            <li>
+                <a href="/reports">
+                    <i class="fas fa-file-pdf"></i>
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <div class="top-bar">
+
+            <div>
+                <h2>Dashboard Overview</h2>
+                <p>AI Customer Segmentation & Recommendation System</p>
+            </div>
+
+        </div>
+
+        <!-- STATS -->
+
+        <div class="row g-4 mt-2">
+
+            <div class="col-md-3">
+
+                <div class="card-box">
+
+                    <i class="fas fa-users"></i>
+
+                    <h3>{{ total_customers }}</h3>
+
+                    <p>Total Customers</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card-box">
+
+                    <i class="fas fa-box"></i>
+
+                    <h3>{{ total_products }}</h3>
+
+                    <p>Total Products</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card-box">
+
+                    <i class="fas fa-layer-group"></i>
+
+                    <h3>4</h3>
+
+                    <p>Customer Segments</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="card-box">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    <h3>{{ avg_spending }}</h3>
+
+                    <p>Avg Spending</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- UPLOAD SECTION -->
+
+        <div class="upload-card mt-5">
+
+            <h4>
+                <i class="fas fa-upload"></i>
+                Upload Dataset
+            </h4>
+
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+
+                <div class="row mt-3">
+
+                    <div class="col-md-6">
+
+                        <input
+                        type="file"
+                        name="customer_file"
+                        class="form-control">
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <input
+                        type="file"
+                        name="product_file"
+                        class="form-control">
+
+                    </div>
+
+                </div>
+
+                <button
+                type="submit"
+                class="btn btn-primary mt-3">
+
+                    Upload Files
+
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- CHART -->
+
+        <div class="chart-section mt-5">
+
+    <h4>Customer Analytics</h4>
+
+    <img src="{{ url_for('static', filename=chart_file) }}"
+         class="img-fluid analytics-chart">
+
+</div>
+
+        <!-- CUSTOMER TABLE -->
+
+        <div class="table-card mt-5">
+
+            <h4>
+                Customer Data
+            </h4>
+
+            <div class="table-responsive">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>CustomerID</th>
+                            <th>CustomerName</th>
+                            <th>Gender</th>
+                            <th>Age</th>
+                            <th>AnnualIncome</th>
+                            <th>SpendingScore</th>
+                            <th>Segment</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+{% for customer in customer_data %}
+
+<tr>
+    <td>{{ customer.CustomerID }}</td>
+    <td>{{ customer.CustomerName }}</td>
+    <td>{{ customer.Gender }}</td>
+    <td>{{ customer.Age }}</td>
+    <td>{{ customer.AnnualIncome }}</td>
+    <td>{{ customer.SpendingScore }}</td>
+    <td>{{ customer.Segment }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- RECOMMENDATIONS -->
+
+        <div class="recommend-card mt-5">
+
+            <h4>
+                AI Product Recommendations
+            </h4>
+
+            <div class="row mt-4">
+
+                <div class="col-md-4">
+
+                    <div class="recommend-box">
+
+                        <i class="fas fa-laptop"></i>
+
+                        <h5>Laptop</h5>
+
+                        <p>Recommended for Premium Customers</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="recommend-box">
+
+                        <i class="fas fa-mobile-screen"></i>
+
+                        <h5>Smartphone</h5>
+
+                        <p>Recommended for High Spenders</p>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="recommend-box">
+
+                        <i class="fas fa-headphones"></i>
+
+                        <h5>Headphones</h5>
+
+                        <p>Recommended for Young Customers</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+

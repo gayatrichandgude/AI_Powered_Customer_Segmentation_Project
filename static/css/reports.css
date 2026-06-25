@@ -1,0 +1,255 @@
+/* ==============================
+   GLOBAL
+============================== */
+
+body {
+    background: #f5f7fb;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ==============================
+   WRAPPER
+============================== */
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* ==============================
+   SIDEBAR (same as dashboard)
+============================== */
+
+.sidebar {
+    width: 260px;
+    background: linear-gradient(180deg, #4f46e5, #06b6d4);
+    color: white;
+    position: fixed;
+    height: 100vh;
+    padding: 30px 20px;
+}
+
+.sidebar-logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.sidebar-logo i {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.sidebar-logo span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: white;
+    padding: 14px 18px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: rgba(255, 255, 255, .20);
+    transform: translateX(5px);
+}
+
+.sidebar ul li a.active {
+    background: white;
+    color: #4f46e5;
+    font-weight: 700;
+}
+
+
+/* ==============================
+   MAIN CONTENT
+============================== */
+
+.main-content {
+    margin-left: 260px;
+    width: 100%;
+    padding: 35px;
+}
+
+
+/* ==============================
+   TOP BAR
+============================== */
+
+.top-bar {
+    background: linear-gradient( 135deg, #4f46e5, #06b6d4);
+    color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.title-box {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.title-box i {
+    color: white;
+    font-size: 42px;
+    /* 🔥 big icon */
+    color: white;
+}
+
+.title-box h2 {
+    color: white;
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.title-box p {
+    margin: 0;
+    color: white;
+    font-size: 14px;
+}
+
+
+/* ==============================
+   KPI CARDS
+============================== */
+
+.card-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.card-box:hover {
+    transform: translateY(-8px);
+}
+
+.card-box i {
+    font-size: 35px;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.card-box h3 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.card-box p {
+    color: #6b7280;
+}
+
+
+/* ==============================
+   TABLE CARD
+============================== */
+
+.table-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.table-card h4 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.table thead {
+    background: #4f46e5;
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 15px;
+}
+
+
+/* ==============================
+   AI INSIGHT BOX
+============================== */
+
+.recommend-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.recommend-card h4 {
+    font-weight: 700;
+}
+
+.recommend-box {
+    background: #f8fafc;
+    border-radius: 18px;
+    padding: 25px;
+    text-align: center;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.recommend-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.recommend-box i {
+    font-size: 40px;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.recommend-box h5 {
+    font-weight: 700;
+}
+
+.recommend-box p {
+    color: #6b7280;
+    margin-top: 10px;
+}
+
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media(max-width: 991px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .wrapper {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recommendations | Segment AI</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/recommendations.css') }}">
+
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h3>🧠 Segment AI</h3>
+
+        <ul>
+
+            <li>
+                <a href="/dashboard">
+                    <i class="fas fa-home"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/customers">
+                    <i class="fas fa-users"></i>
+                    Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="/segments">
+                    <i class="fas fa-layer-group"></i>
+                    Segments
+                </a>
+            </li>
+
+            <li>
+                <a href="/recommendations" class="active">
+                    <i class="fas fa-lightbulb"></i>
+                    Recommendations
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="page-header">
+
+            <h1>
+                <i class="fas fa-lightbulb"></i>
+                Product Recommendations
+            </h1>
+
+            <p>
+                AI-based personalized recommendations for customers
+            </p>
+
+        </div>
+
+        <!-- Stats -->
+
+        <div class="row g-4 mb-5">
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-users"></i>
+
+                    <h2>{{ total_customers }}</h2>
+
+                    <p>Total Customers</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-box"></i>
+
+                    <h2>{{ total_products }}</h2>
+
+                    <p>Total Products</p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="stat-card">
+
+                    <i class="fas fa-star"></i>
+
+                    <h2>{{ total_recommendations }}</h2>
+
+                    <p>Recommendations</p>
+
+                </div>
+
+            </div>
+
+        </div>
+<!-- Category Cards -->
+<div class="row g-4 mb-5">
+
+    {% for cat in category_cards %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+        <div class="stat-card category-card">
+
+            <!-- Icon (optional dynamic later) -->
+            <i class="fas {{ cat.icon }}"></i>
+
+            <h2>{{ cat.count }}</h2>
+
+            <p>{{ cat.category }}</p>
+
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+        <!-- Recommendation Table -->
+
+        <div class="table-card">
+
+            <h4 class="mb-4">
+
+                <i class="fas fa-robot"></i>
+                Recommended Products
+
+            </h4>
+
+            <div class="table-responsive">
+
+                <table class="table table-hover">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Customer ID</th>
+                            <th>Segment</th>
+                            <th>Recommended Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for row in recommendations %}
+
+                        <tr>
+
+                            <td>{{ row.CustomerID }}</td>
+                            <td>{{ row.Segment }}</td>
+                            <td>{{ row.ProductName }}</td>
+                            <td>{{ row.Category }}</td>
+                            <td>₹ {{ row.Price }}</td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
